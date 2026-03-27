@@ -99,7 +99,7 @@
   .card:hover { border-color: #3a4880; transform: translateY(-1px); }
   .card-label {
     font-size: 0.68rem;
-    color: #4a5570;
+    color: #8a9bbf;
     font-weight: 700;
     margin-bottom: 7px;
     text-transform: uppercase;
@@ -111,14 +111,28 @@
     line-height: 1;
     letter-spacing: -1.5px;
   }
-  .card-sub {
-    margin-top: 9px;
-    font-size: 0.76rem;
-    color: #5a6480;
-    border-top: 1px solid #1a1e38;
-    padding-top: 8px;
+
+  /* ── Twee-kolom vergelijking ── */
+  .cmp-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding-top: 9px;
+    border-top: 1px solid #1e2445;
+    gap: 6px;
+    flex-wrap: wrap;
   }
-  .card-sub b { color: #c0cce8; }
+  .cmp {
+    font-size: 0.78rem;
+    font-weight: 700;
+    border-radius: 5px;
+    padding: 2px 7px;
+  }
+  .cmp-pos { background: rgba(46,204,138,0.15); color: #2ecc8a; }
+  .cmp-neg { background: rgba(255,80,80,0.15);  color: #ff6060; }
+  .cmp-neu { color: #5a6480; font-size: 0.72rem; font-weight: 400; }
+  .cmp-gem { font-size: 0.72rem; color: #6a7a9a; }
 
   /* ── Metric rows ── */
   .metrics {
@@ -138,8 +152,8 @@
   }
   .metric-row:hover { background: #13172e; }
   .metric-row:last-child { border-bottom: none; }
-  .metric-row .ml { color: #4e5a78; }
-  .metric-row .mv { font-weight: 700; color: #c8d4ee; }
+  .metric-row .ml { color: #8a9bbf; }
+  .metric-row .mv { font-weight: 700; color: #ffffff; }
 
   /* ── Accent colours per fase ── */
   .f1 .card-value { color: #4f9eff; }
@@ -152,12 +166,15 @@
   .f3 .fase-header { box-shadow: 0 4px 20px rgba(255,170,46,0.15); }
   .f4 .fase-header { box-shadow: 0 4px 20px rgba(176,106,255,0.15); }
 
+  /* ── Topbar tekst ── */
+  .topbar-meta { color: #8a9bbf; }
+
   /* ── Footer ── */
   .footer {
     margin-top: 18px;
     text-align: center;
     font-size: 0.7rem;
-    color: #2a3050;
+    color: #8a9bbf;
     padding-top: 14px;
     border-top: 1px solid #131730;
   }
@@ -181,7 +198,7 @@
     <span>Periode: 7 dagen &nbsp;|&nbsp; 27-03-2026</span>
     <a href="https://docs.google.com/spreadsheets/d/1LrGHSwQr2YGvL-cZiS1_MCWLfH8CQjDxjZwYvCn2Bu0" target="_blank"
        style="color:#5b8dee;text-decoration:none;">↗ Google Sheets</a>
-    <span class="topbar-time">13:19</span>
+    <span class="topbar-time">13:33</span>
   </div>
 </div>
 
@@ -196,19 +213,19 @@
 
     <div class="card">
       <div class="card-label">Totaal bereik</div>
-      <div class="card-value">184.643</div>
-      <div class="card-sub">Unieke mensen bereikt via alle kanalen</div>
+      <div class="card-value">184.859</div>
+      <div class="cmp-row"><span class="cmp cmp-pos">▲ 728.7%</span><span class="cmp-gem">30d gem: 22306.7</span></div>
     </div>
 
     <div class="card">
       <div class="card-label">Meta Ads impressies</div>
       <div class="card-value">41.113</div>
-      <div class="card-sub"><b>1.59×</b> gemiddeld gezien &nbsp;|&nbsp; CPM <b>€ 6,79</b></div>
+      <div class="cmp-row"><span class="cmp cmp-neg">▼ 8.9%</span><span class="cmp-gem">30d gem: 45128.1</span></div>
     </div>
 
     <div class="metrics">
-      <div class="metric-row"><span class="ml">Instagram bereik</span><span class="mv">6.834</span></div>
-      <div class="metric-row"><span class="ml">Facebook bereik</span><span class="mv">151.971</span></div>
+      <div class="metric-row"><span class="ml">Instagram bereik</span><span class="mv">6.944</span></div>
+      <div class="metric-row"><span class="ml">Facebook bereik</span><span class="mv">152.077</span></div>
       <div class="metric-row"><span class="ml">Meta Ads bereik</span><span class="mv">25.838</span></div>
       <div class="metric-row"><span class="ml">Nieuwe IG volgers</span><span class="mv">+5</span></div>
       <div class="metric-row"><span class="ml">Nieuwe FB fans</span><span class="mv">+0</span></div>
@@ -230,21 +247,21 @@
 
     <div class="card">
       <div class="card-label">Totaal engagement</div>
-      <div class="card-value">10.035</div>
-      <div class="card-sub">Likes, reacties, shares op alle posts</div>
+      <div class="card-value">10.053</div>
+      <div class="cmp-row"><span class="cmp cmp-neg">▼ 98.8%</span><span class="cmp-gem">30d gem: 45128.1</span></div>
     </div>
 
     <div class="card">
       <div class="card-label">Meta Ads klikken</div>
       <div class="card-value">1.075</div>
-      <div class="card-sub">CTR <b>5.01%</b> &nbsp;|&nbsp; van impressie naar klik</div>
+      <div class="cmp-row"><span class="cmp cmp-neg">▼ 8.1%</span><span class="cmp-gem">30d gem: 1170.2</span></div>
     </div>
 
     <div class="metrics">
-      <div class="metric-row"><span class="ml">Instagram engagement</span><span class="mv">546</span></div>
-      <div class="metric-row"><span class="ml">IG engagement rate</span><span class="mv">7.99</span></div>
+      <div class="metric-row"><span class="ml">Instagram engagement</span><span class="mv">548</span></div>
+      <div class="metric-row"><span class="ml">IG engagement rate</span><span class="mv">7.89</span></div>
       <div class="metric-row"><span class="ml">Instagram posts</span><span class="mv">25</span></div>
-      <div class="metric-row"><span class="ml">Facebook engagement</span><span class="mv">9.489</span></div>
+      <div class="metric-row"><span class="ml">Facebook engagement</span><span class="mv">9.505</span></div>
       <div class="metric-row"><span class="ml">Facebook fans totaal</span><span class="mv">5.023</span></div>
     </div>
 
@@ -263,21 +280,21 @@
 
     <div class="card">
       <div class="card-label">Websitesessies</div>
-      <div class="card-value">3.696</div>
-      <div class="card-sub"><b>2.870</b> gebruikers &nbsp;|&nbsp; <b>2.369</b> nieuw</div>
+      <div class="card-value">3.699</div>
+      <div class="cmp-row"><span class="cmp cmp-neg">▼ 11.1%</span><span class="cmp-gem">30d gem: 4161.3</span></div>
     </div>
 
     <div class="card">
-      <div class="card-label">Gem. sessieduur</div>
-      <div class="card-value">2m 53s</div>
-      <div class="card-sub">Engagement rate <b>39.4%</b></div>
+      <div class="card-label">Gebruikers</div>
+      <div class="card-value">2.875</div>
+      <div class="cmp-row"><span class="cmp cmp-neg">▼ 6.5%</span><span class="cmp-gem">30d gem: 3075.1</span></div>
     </div>
 
     <div class="metrics">
-      <div class="metric-row"><span class="ml">Terugkerende bezoekers</span><span class="mv">501</span></div>
+      <div class="metric-row"><span class="ml">Terugkerende bezoekers</span><span class="mv">503</span></div>
       <div class="metric-row"><span class="ml">Bounce rate</span><span class="mv">60.6%</span></div>
       <div class="metric-row"><span class="ml">Engagement rate</span><span class="mv">39.4%</span></div>
-      <div class="metric-row"><span class="ml">Sessieduur</span><span class="mv">2m 53s</span></div>
+      <div class="metric-row"><span class="ml">Sessieduur</span><span class="mv">2m 54s</span></div>
       <div class="metric-row"><span class="ml">Pageviews/sessie</span><span class="mv">—</span></div>
     </div>
 
@@ -297,13 +314,13 @@
     <div class="card">
       <div class="card-label">Meta Ads leads</div>
       <div class="card-value">12</div>
-      <div class="card-sub">CPL <b>€ 23,25</b> &nbsp;|&nbsp; spend <b>€ 279,03</b></div>
+      <div class="cmp-row"><span class="cmp cmp-neg">▼ 9.8%</span><span class="cmp-gem">30d gem: 13.3</span></div>
     </div>
 
     <div class="card">
       <div class="card-label">GA4 conversies</div>
       <div class="card-value">62</div>
-      <div class="card-sub">Conv. rate <b>0.76%</b></div>
+      <div class="cmp-row"><span class="cmp cmp-neg">▼ 20.7%</span><span class="cmp-gem">30d gem: 78.2</span></div>
     </div>
 
     <div class="metrics">
@@ -323,7 +340,7 @@
 </div><!-- /journey -->
 
 <div class="footer">
-  Automatisch gegenereerd op 27-03-2026 om 13:19 &nbsp;&mdash;&nbsp;
+  Automatisch gegenereerd op 27-03-2026 om 13:33 &nbsp;&mdash;&nbsp;
   <a href="https://docs.google.com/spreadsheets/d/1LrGHSwQr2YGvL-cZiS1_MCWLfH8CQjDxjZwYvCn2Bu0" target="_blank">Bekijk volledig rapport in Google Sheets</a>
 </div>
 
@@ -340,7 +357,7 @@ new Chart(document.getElementById('chartBereik'), {
   type: 'doughnut',
   data: {
     labels: ['Instagram', 'Facebook', 'Meta Ads'],
-    datasets: [{ data: [6834, 151971, 25838],
+    datasets: [{ data: [6944, 152077, 25838],
       backgroundColor: ['#4f9eff','#2ecc8a','#ffaa2e'],
       borderWidth: 2, borderColor: '#080b18', hoverOffset: 8 }]
   },
@@ -356,7 +373,7 @@ new Chart(document.getElementById('chartEngagement'), {
   type: 'doughnut',
   data: {
     labels: ['Instagram', 'Facebook'],
-    datasets: [{ data: [546, 9489],
+    datasets: [{ data: [548, 9505],
       backgroundColor: ['#4f9eff','#2ecc8a'],
       borderWidth: 2, borderColor: '#080b18', hoverOffset: 8 }]
   },
@@ -372,7 +389,7 @@ new Chart(document.getElementById('chartWebsite'), {
   type: 'bar',
   data: {
     labels: ['Gebruikers', 'Sessies', 'Conversies'],
-    datasets: [{ data: [2870, 3696, 62],
+    datasets: [{ data: [2875, 3699, 62],
       backgroundColor: ['rgba(79,158,255,0.25)','rgba(255,170,46,0.25)','rgba(46,204,138,0.25)'],
       borderColor:     ['#4f9eff','#ffaa2e','#2ecc8a'],
       borderWidth: 2, borderRadius: 6 }]
@@ -393,7 +410,7 @@ new Chart(document.getElementById('chartFunnel'), {
   type: 'bar',
   data: {
     labels: ['Bereik', 'Klikken', 'Leads', 'Conversies'],
-    datasets: [{ data: [184643, 1075, 12, 62],
+    datasets: [{ data: [184859, 1075, 12, 62],
       backgroundColor: ['rgba(79,158,255,0.25)','rgba(255,170,46,0.25)','rgba(176,106,255,0.25)','rgba(46,204,138,0.25)'],
       borderColor:     ['#4f9eff','#ffaa2e','#b06aff','#2ecc8a'],
       borderWidth: 2, borderRadius: 6 }]
