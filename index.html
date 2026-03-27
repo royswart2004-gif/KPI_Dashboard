@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing Dashboard — 27-03-2026</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    background: #080b18;
+    color: #dde3f0;
+    min-height: 100vh;
+    padding: 22px;
+  }
+
+  /* ── Header ── */
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #0d1130 0%, #111630 100%);
+    border: 1px solid #1e2448;
+    border-radius: 14px;
+  }
+  .topbar-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    color: #fff;
+  }
+  .topbar-title span {
+    background: linear-gradient(90deg, #4f9eff, #a259ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .topbar-meta {
+    font-size: 0.76rem;
+    color: #5a6480;
+    display: flex;
+    gap: 18px;
+    align-items: center;
+  }
+  .topbar-time {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -1px;
+  }
+
+  /* ── Journey grid ── */
+  .journey {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+
+  /* ── Phase column ── */
+  .fase {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .fase-header {
+    border-radius: 12px;
+    padding: 14px 18px 12px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .fase-source {
+    font-size: 0.67rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    opacity: 0.6;
+    margin-top: 3px;
+    text-transform: none;
+  }
+  .h-blauw { background: linear-gradient(135deg, #0f2d6b 0%, #1a3d8a 100%); border: 1px solid #2a52b0; }
+  .h-groen { background: linear-gradient(135deg, #0a3528 0%, #0f4a38 100%); border: 1px solid #1a6e52; }
+  .h-geel  { background: linear-gradient(135deg, #3a2200 0%, #5a3800 100%); border: 1px solid #8a5c00; }
+  .h-paars { background: linear-gradient(135deg, #2a1060 0%, #3d1a8a 100%); border: 1px solid #6030c0; }
+
+  /* ── KPI card ── */
+  .card {
+    background: linear-gradient(160deg, #111428 0%, #0e1224 100%);
+    border: 1px solid #1c2040;
+    border-radius: 12px;
+    padding: 16px 18px;
+    flex-shrink: 0;
+    transition: border-color 0.2s, transform 0.15s;
+  }
+  .card:hover { border-color: #3a4880; transform: translateY(-1px); }
+  .card-label {
+    font-size: 0.68rem;
+    color: #4a5570;
+    font-weight: 700;
+    margin-bottom: 7px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .card-value {
+    font-size: 2.1rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -1.5px;
+  }
+  .card-sub {
+    margin-top: 9px;
+    font-size: 0.76rem;
+    color: #5a6480;
+    border-top: 1px solid #1a1e38;
+    padding-top: 8px;
+  }
+  .card-sub b { color: #c0cce8; }
+
+  /* ── Metric rows ── */
+  .metrics {
+    background: linear-gradient(160deg, #111428 0%, #0e1224 100%);
+    border: 1px solid #1c2040;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .metric-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 16px;
+    border-bottom: 1px solid #161a30;
+    font-size: 0.78rem;
+    transition: background 0.15s;
+  }
+  .metric-row:hover { background: #13172e; }
+  .metric-row:last-child { border-bottom: none; }
+  .metric-row .ml { color: #4e5a78; }
+  .metric-row .mv { font-weight: 700; color: #c8d4ee; }
+
+  /* ── Accent colours per fase ── */
+  .f1 .card-value { color: #4f9eff; }
+  .f2 .card-value { color: #2ecc8a; }
+  .f3 .card-value { color: #ffaa2e; }
+  .f4 .card-value { color: #b06aff; }
+
+  .f1 .fase-header { box-shadow: 0 4px 20px rgba(79,158,255,0.15); }
+  .f2 .fase-header { box-shadow: 0 4px 20px rgba(46,204,138,0.15); }
+  .f3 .fase-header { box-shadow: 0 4px 20px rgba(255,170,46,0.15); }
+  .f4 .fase-header { box-shadow: 0 4px 20px rgba(176,106,255,0.15); }
+
+  /* ── Footer ── */
+  .footer {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 0.7rem;
+    color: #2a3050;
+    padding-top: 14px;
+    border-top: 1px solid #131730;
+  }
+  .footer a { color: #4f9eff; text-decoration: none; }
+  .chart-card { padding: 14px 16px; }
+  canvas { max-height: 180px; }
+
+  @media (max-width: 900px) {
+    .journey { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 500px) {
+    .journey { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-title">Marketing <span>Dashboard</span> &mdash; IVECO Schouten</div>
+  <div class="topbar-meta">
+    <span>Periode: 7 dagen &nbsp;|&nbsp; 27-03-2026</span>
+    <a href="https://docs.google.com/spreadsheets/d/1LrGHSwQr2YGvL-cZiS1_MCWLfH8CQjDxjZwYvCn2Bu0" target="_blank"
+       style="color:#5b8dee;text-decoration:none;">↗ Google Sheets</a>
+    <span class="topbar-time">12:24</span>
+  </div>
+</div>
+
+<div class="journey">
+
+  <!-- ════ FASE 1: BEWUSTWORDING ════ -->
+  <div class="fase f1">
+    <div class="fase-header h-blauw">
+      👁 Bewustwording
+      <div class="fase-source">Instagram · Facebook · Meta Ads</div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Totaal bereik</div>
+      <div class="card-value">183.708</div>
+      <div class="card-sub">Unieke mensen bereikt via alle kanalen</div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Meta Ads impressies</div>
+      <div class="card-value">41.109</div>
+      <div class="card-sub"><b>1.59×</b> gemiddeld gezien &nbsp;|&nbsp; CPM <b>€ 6,79</b></div>
+    </div>
+
+    <div class="metrics">
+      <div class="metric-row"><span class="ml">Instagram bereik</span><span class="mv">6.293</span></div>
+      <div class="metric-row"><span class="ml">Facebook bereik</span><span class="mv">151.580</span></div>
+      <div class="metric-row"><span class="ml">Meta Ads bereik</span><span class="mv">25.835</span></div>
+      <div class="metric-row"><span class="ml">Nieuwe IG volgers</span><span class="mv">+5</span></div>
+      <div class="metric-row"><span class="ml">Nieuwe FB fans</span><span class="mv">+0</span></div>
+      <div class="metric-row"><span class="ml">Netto FB groei</span><span class="mv">+0</span></div>
+    </div>
+
+    <div class="card chart-card">
+      <div class="card-label">Bereik verdeling</div>
+      <canvas id="chartBereik"></canvas>
+    </div>
+  </div>
+
+  <!-- ════ FASE 2: INTERESSE ════ -->
+  <div class="fase f2">
+    <div class="fase-header h-groen">
+      💡 Interesse
+      <div class="fase-source">Instagram · Facebook Organic</div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Totaal engagement</div>
+      <div class="card-value">9.971</div>
+      <div class="card-sub">Likes, reacties, shares op alle posts</div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Meta Ads klikken</div>
+      <div class="card-value">1.075</div>
+      <div class="card-sub">CTR <b>5.01%</b> &nbsp;|&nbsp; van impressie naar klik</div>
+    </div>
+
+    <div class="metrics">
+      <div class="metric-row"><span class="ml">Instagram engagement</span><span class="mv">542</span></div>
+      <div class="metric-row"><span class="ml">IG engagement rate</span><span class="mv">8.61</span></div>
+      <div class="metric-row"><span class="ml">Instagram posts</span><span class="mv">25</span></div>
+      <div class="metric-row"><span class="ml">Facebook engagement</span><span class="mv">9.429</span></div>
+      <div class="metric-row"><span class="ml">Facebook fans totaal</span><span class="mv">5.023</span></div>
+    </div>
+
+    <div class="card chart-card">
+      <div class="card-label">Engagement verdeling</div>
+      <canvas id="chartEngagement"></canvas>
+    </div>
+  </div>
+
+  <!-- ════ FASE 3: OVERWEGING ════ -->
+  <div class="fase f3">
+    <div class="fase-header h-geel">
+      🔍 Overweging
+      <div class="fase-source">GA4 Website Analytics</div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Websitesessies</div>
+      <div class="card-value">3.682</div>
+      <div class="card-sub"><b>2.855</b> gebruikers &nbsp;|&nbsp; <b>2.355</b> nieuw</div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Gem. sessieduur</div>
+      <div class="card-value">2m 52s</div>
+      <div class="card-sub">Engagement rate <b>39.6%</b></div>
+    </div>
+
+    <div class="metrics">
+      <div class="metric-row"><span class="ml">Terugkerende bezoekers</span><span class="mv">500</span></div>
+      <div class="metric-row"><span class="ml">Bounce rate</span><span class="mv">60.4%</span></div>
+      <div class="metric-row"><span class="ml">Engagement rate</span><span class="mv">39.6%</span></div>
+      <div class="metric-row"><span class="ml">Sessieduur</span><span class="mv">2m 52s</span></div>
+      <div class="metric-row"><span class="ml">Pageviews/sessie</span><span class="mv">—</span></div>
+    </div>
+
+    <div class="card chart-card">
+      <div class="card-label">Website KPI's</div>
+      <canvas id="chartWebsite"></canvas>
+    </div>
+  </div>
+
+  <!-- ════ FASE 4: ACTIE ════ -->
+  <div class="fase f4">
+    <div class="fase-header h-paars">
+      ✅ Actie
+      <div class="fase-source">GA4 Conversies · Meta Leads</div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Meta Ads leads</div>
+      <div class="card-value">12</div>
+      <div class="card-sub">CPL <b>€ 23,25</b> &nbsp;|&nbsp; spend <b>€ 278,99</b></div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">GA4 conversies</div>
+      <div class="card-value">62</div>
+      <div class="card-sub">Conv. rate <b>0.76%</b></div>
+    </div>
+
+    <div class="metrics">
+      <div class="metric-row"><span class="ml">Meta Ads spend</span><span class="mv">€ 278,99</span></div>
+      <div class="metric-row"><span class="ml">Cost per lead</span><span class="mv">€ 23,25</span></div>
+      <div class="metric-row"><span class="ml">GA4 conv. rate</span><span class="mv">0.76%</span></div>
+      <div class="metric-row"><span class="ml">Instagram volgers</span><span class="mv">1.454</span></div>
+      <div class="metric-row"><span class="ml">IG volgers nieuw</span><span class="mv">+5</span></div>
+    </div>
+
+    <div class="card chart-card">
+      <div class="card-label">Conversie funnel</div>
+      <canvas id="chartFunnel"></canvas>
+    </div>
+  </div>
+
+</div><!-- /journey -->
+
+<div class="footer">
+  Automatisch gegenereerd op 27-03-2026 om 12:24 &nbsp;&mdash;&nbsp;
+  <a href="https://docs.google.com/spreadsheets/d/1LrGHSwQr2YGvL-cZiS1_MCWLfH8CQjDxjZwYvCn2Bu0" target="_blank">Bekijk volledig rapport in Google Sheets</a>
+</div>
+
+<script>
+Chart.defaults.color = '#8892a4';
+Chart.defaults.font.family = 'Segoe UI, system-ui, sans-serif';
+Chart.defaults.font.size = 11;
+
+const GRID = { color: 'rgba(255,255,255,0.04)' };
+const LEG  = { position: 'bottom', labels: { boxWidth: 10, padding: 12, color: '#5a6480' } };
+
+// Bereik verdeling — donut
+new Chart(document.getElementById('chartBereik'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Instagram', 'Facebook', 'Meta Ads'],
+    datasets: [{ data: [6293, 151580, 25835],
+      backgroundColor: ['#4f9eff','#2ecc8a','#ffaa2e'],
+      borderWidth: 2, borderColor: '#080b18', hoverOffset: 8 }]
+  },
+  options: {
+    plugins: { legend: LEG },
+    cutout: '68%',
+    responsive: true,
+  }
+});
+
+// Engagement verdeling — donut
+new Chart(document.getElementById('chartEngagement'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Instagram', 'Facebook'],
+    datasets: [{ data: [542, 9429],
+      backgroundColor: ['#4f9eff','#2ecc8a'],
+      borderWidth: 2, borderColor: '#080b18', hoverOffset: 8 }]
+  },
+  options: {
+    plugins: { legend: LEG },
+    cutout: '68%',
+    responsive: true,
+  }
+});
+
+// Website KPI's — horizontale bar
+new Chart(document.getElementById('chartWebsite'), {
+  type: 'bar',
+  data: {
+    labels: ['Gebruikers', 'Sessies', 'Conversies'],
+    datasets: [{ data: [2855, 3682, 62],
+      backgroundColor: ['rgba(79,158,255,0.25)','rgba(255,170,46,0.25)','rgba(46,204,138,0.25)'],
+      borderColor:     ['#4f9eff','#ffaa2e','#2ecc8a'],
+      borderWidth: 2, borderRadius: 6 }]
+  },
+  options: {
+    indexAxis: 'y',
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: GRID, ticks: { color: '#3a4260' } },
+      y: { grid: { display: false }, ticks: { color: '#5a6480' } }
+    },
+    responsive: true,
+  }
+});
+
+// Conversie funnel — bar
+new Chart(document.getElementById('chartFunnel'), {
+  type: 'bar',
+  data: {
+    labels: ['Bereik', 'Klikken', 'Leads', 'Conversies'],
+    datasets: [{ data: [183708, 1075, 12, 62],
+      backgroundColor: ['rgba(79,158,255,0.25)','rgba(255,170,46,0.25)','rgba(176,106,255,0.25)','rgba(46,204,138,0.25)'],
+      borderColor:     ['#4f9eff','#ffaa2e','#b06aff','#2ecc8a'],
+      borderWidth: 2, borderRadius: 6 }]
+  },
+  options: {
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { display: false }, ticks: { color: '#5a6480' } },
+      y: { grid: GRID, ticks: { color: '#3a4260' } }
+    },
+    responsive: true,
+  }
+});
+</script>
+
+</body>
+</html>
