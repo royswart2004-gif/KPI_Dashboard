@@ -2,3 +2,8 @@ google_keys.json
 .env
 __pycache__/
 *.pyc
+dashboard_update.py
+requirements.txt
+env.example
+gitignore
+dashboard.html
