@@ -1,9 +1,14 @@
-google_keys.json
+# Credentials — NOOIT committen
 .env
+google_keys.json
+
+# Python
 __pycache__/
 *.pyc
-dashboard_update.py
-requirements.txt
-env.example
-gitignore
-dashboard.html
+*.pyo
+.venv/
+venv/
+env/
+
+# VS Code
+.vscode/settings.json
