@@ -2,15 +2,15 @@
   {
     "datum": "14-04-2026",
     "kpi": {
-      "ga4_users": 3782,
-      "ga4_new_users": 3307,
-      "ga4_sessies": 4701,
+      "ga4_users": 3799,
+      "ga4_new_users": 3320,
+      "ga4_sessies": 4724,
       "ga4_conv": 61,
-      "ga4_conv_rate": "0.6%",
-      "ga4_bounce": "64.7%",
-      "ga4_eng_rate": "35.3%",
+      "ga4_conv_rate": "0.59%",
+      "ga4_bounce": "64.8%",
+      "ga4_eng_rate": "35.2%",
       "ga4_gem_duur": "2m 7s",
-      "ga4_pageviews": 7936,
+      "ga4_pageviews": 7978,
       "meta_spend": 298.59,
       "meta_leads": 5,
       "meta_cpl": 59.72,
@@ -28,10 +28,10 @@
       "klik_spend": 119.63,
       "fb_fans": 5031,
       "fb_fans_added": 9,
-      "fb_bereik": 39266,
+      "fb_bereik": 39363,
       "fb_engagement": 264,
       "ig_volgers": 1463,
-      "ig_bereik": 6698,
+      "ig_bereik": 6699,
       "ig_engagement": 357,
       "ig_eng_rate": 5.33,
       "ig_new_followers": 0
@@ -290,12 +290,12 @@
     "kanalen": [
       {
         "kanaal": "Direct",
-        "gebruikers": 1932,
-        "sessies": 2174,
+        "gebruikers": 1945,
+        "sessies": 2188,
         "engaged": 489,
-        "eng_rate": 22.5,
+        "eng_rate": 22.3,
         "conversies": 35,
-        "conv_rate": 0.6
+        "conv_rate": 0.59
       },
       {
         "kanaal": "Paid Social",
@@ -308,21 +308,21 @@
       },
       {
         "kanaal": "Organic Search",
-        "gebruikers": 657,
-        "sessies": 881,
+        "gebruikers": 659,
+        "sessies": 884,
         "engaged": 526,
-        "eng_rate": 59.7,
+        "eng_rate": 59.5,
         "conversies": 13,
-        "conv_rate": 0.91
+        "conv_rate": 0.9
       },
       {
         "kanaal": "Unassigned",
-        "gebruikers": 393,
-        "sessies": 444,
+        "gebruikers": 408,
+        "sessies": 463,
         "engaged": 1,
         "eng_rate": 0.2,
         "conversies": 5,
-        "conv_rate": 0.68
+        "conv_rate": 0.65
       },
       {
         "kanaal": "Referral",
@@ -335,10 +335,10 @@
       },
       {
         "kanaal": "Organic Social",
-        "gebruikers": 159,
-        "sessies": 161,
-        "engaged": 70,
-        "eng_rate": 43.5,
+        "gebruikers": 160,
+        "sessies": 162,
+        "engaged": 71,
+        "eng_rate": 43.8,
         "conversies": 0,
         "conv_rate": 0.0
       },
@@ -353,12 +353,12 @@
       },
       {
         "kanaal": "Paid Search",
-        "gebruikers": 43,
-        "sessies": 47,
+        "gebruikers": 44,
+        "sessies": 48,
         "engaged": 28,
-        "eng_rate": 59.6,
+        "eng_rate": 58.3,
         "conversies": 2,
-        "conv_rate": 2.13
+        "conv_rate": 2.08
       },
       {
         "kanaal": "Email",
@@ -382,13 +382,13 @@
     "landingspaginas": [
       {
         "pagina": "/",
-        "sessies": 744,
-        "gebruikers": 655,
+        "sessies": 751,
+        "gebruikers": 661,
         "engaged": 486,
-        "eng_rate": 65.3,
-        "bounce": 34.7,
+        "eng_rate": 64.7,
+        "bounce": 35.3,
         "conversies": 37,
-        "gem_duur": 351.1
+        "gem_duur": 349.6
       },
       {
         "pagina": "/werken-bij",
@@ -402,23 +402,23 @@
       },
       {
         "pagina": "/werken-bij/kantoor",
-        "sessies": 272,
-        "gebruikers": 262,
-        "engaged": 150,
-        "eng_rate": 55.1,
-        "bounce": 44.9,
+        "sessies": 273,
+        "gebruikers": 263,
+        "engaged": 151,
+        "eng_rate": 55.3,
+        "bounce": 44.7,
         "conversies": 0,
-        "gem_duur": 50.1
+        "gem_duur": 50.7
       },
       {
         "pagina": "",
-        "sessies": 219,
-        "gebruikers": 183,
+        "sessies": 235,
+        "gebruikers": 197,
         "engaged": 0,
         "eng_rate": 0.0,
         "bounce": 100.0,
         "conversies": 1,
-        "gem_duur": 64.2
+        "gem_duur": 61.8
       },
       {
         "pagina": "(not set)",
@@ -448,7 +448,7 @@
         "eng_rate": 44.4,
         "bounce": 55.6,
         "conversies": 0,
-        "gem_duur": 142.3
+        "gem_duur": 142.8
       },
       {
         "pagina": "/vacatures",
@@ -512,23 +512,23 @@
       },
       {
         "pagina": "/contact",
-        "sessies": 50,
-        "gebruikers": 47,
+        "sessies": 54,
+        "gebruikers": 50,
         "engaged": 8,
-        "eng_rate": 16.0,
-        "bounce": 84.0,
+        "eng_rate": 14.8,
+        "bounce": 85.2,
         "conversies": 3,
-        "gem_duur": 118.0
+        "gem_duur": 120.8
       },
       {
         "pagina": "/voorraad/iveco",
-        "sessies": 47,
+        "sessies": 48,
         "gebruikers": 44,
         "engaged": 18,
-        "eng_rate": 38.3,
-        "bounce": 61.7,
+        "eng_rate": 37.5,
+        "bounce": 62.5,
         "conversies": 0,
-        "gem_duur": 263.1
+        "gem_duur": 257.6
       },
       {
         "pagina": "/vestigingen/doetinchem",
@@ -611,6 +611,16 @@
         "gem_duur": 210.9
       },
       {
+        "pagina": "/modellen/iveco/iveco-daily-bestelwagen",
+        "sessies": 23,
+        "gebruikers": 20,
+        "engaged": 10,
+        "eng_rate": 43.5,
+        "bounce": 56.5,
+        "conversies": 0,
+        "gem_duur": 240.7
+      },
+      {
         "pagina": "/vestigingen/alblasserdam",
         "sessies": 23,
         "gebruikers": 17,
@@ -619,16 +629,6 @@
         "bounce": 56.5,
         "conversies": 0,
         "gem_duur": 220.8
-      },
-      {
-        "pagina": "/modellen/iveco/iveco-daily-bestelwagen",
-        "sessies": 22,
-        "gebruikers": 19,
-        "engaged": 10,
-        "eng_rate": 45.5,
-        "bounce": 54.5,
-        "conversies": 0,
-        "gem_duur": 250.3
       }
     ],
     "fb_posts": [
@@ -880,7 +880,7 @@
         "comments": 0,
         "shares": 4,
         "saves": 1,
-        "bereik": 1018,
+        "bereik": 1019,
         "weergaven": 0,
         "engagement": 21,
         "eng_rate": "2.06%",
