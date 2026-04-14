@@ -2,9 +2,9 @@
   {
     "datum": "14-04-2026",
     "kpi": {
-      "ga4_users": 3770,
+      "ga4_users": 3771,
       "ga4_new_users": 3296,
-      "ga4_sessies": 4684,
+      "ga4_sessies": 4687,
       "ga4_conv": 61,
       "ga4_conv_rate": "0.6%",
       "ga4_bounce": "64.6%",
@@ -14,7 +14,7 @@
       "meta_spend": 298.59,
       "meta_leads": 5,
       "meta_cpl": 59.72,
-      "meta_impressies": 57026,
+      "meta_impressies": 57027,
       "meta_bereik": 38555,
       "meta_freq": 1.48,
       "meta_klikken": 1040,
@@ -55,7 +55,7 @@
         "campagne": "HR Werken bij IVECO Schouten",
         "doel": "LINK_CLICKS",
         "spend": 104.89,
-        "impressies": 29541,
+        "impressies": 29542,
         "freq": 1.46,
         "klikken": 918,
         "ctr": 5.75,
@@ -125,7 +125,7 @@
         "campagne": "HR Werken bij IVECO Schouten",
         "adset": "HR Kantoor Werken bij IVECO Schouten",
         "spend": 34.6,
-        "impressies": 10787,
+        "impressies": 10788,
         "freq": 1.33,
         "klikken": 279,
         "ctr": 6.12,
@@ -221,7 +221,7 @@
         "adset": "HR Kantoor Werken bij IVECO Schouten",
         "ad": "HR Advertentie Kantoor",
         "spend": 34.6,
-        "impressies": 10787,
+        "impressies": 10788,
         "bereik": 8118,
         "klikken": 279,
         "ctr": 6.12,
@@ -290,8 +290,8 @@
     "kanalen": [
       {
         "kanaal": "Direct",
-        "gebruikers": 1926,
-        "sessies": 2166,
+        "gebruikers": 1927,
+        "sessies": 2168,
         "engaged": 489,
         "eng_rate": 22.6,
         "conversies": 35,
@@ -309,9 +309,9 @@
       {
         "kanaal": "Organic Search",
         "gebruikers": 653,
-        "sessies": 875,
+        "sessies": 876,
         "engaged": 525,
-        "eng_rate": 60.0,
+        "eng_rate": 59.9,
         "conversies": 13,
         "conv_rate": 0.91
       },
@@ -382,13 +382,13 @@
     "landingspaginas": [
       {
         "pagina": "/",
-        "sessies": 740,
+        "sessies": 741,
         "gebruikers": 652,
         "engaged": 486,
-        "eng_rate": 65.7,
-        "bounce": 34.3,
+        "eng_rate": 65.6,
+        "bounce": 34.4,
         "conversies": 37,
-        "gem_duur": 353.0
+        "gem_duur": 352.5
       },
       {
         "pagina": "/werken-bij",
@@ -412,13 +412,13 @@
       },
       {
         "pagina": "",
-        "sessies": 213,
-        "gebruikers": 177,
+        "sessies": 214,
+        "gebruikers": 178,
         "engaged": 0,
         "eng_rate": 0.0,
         "bounce": 100.0,
         "conversies": 1,
-        "gem_duur": 66.0
+        "gem_duur": 65.7
       },
       {
         "pagina": "(not set)",
@@ -448,7 +448,7 @@
         "eng_rate": 45.1,
         "bounce": 54.9,
         "conversies": 0,
-        "gem_duur": 132.4
+        "gem_duur": 133.0
       },
       {
         "pagina": "/vacatures",
