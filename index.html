@@ -183,6 +183,55 @@
   .chart-card { padding: 14px 16px; }
   canvas { max-height: 180px; }
 
+  /* ── Alerts ── */
+  .alerts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 12px;
+  }
+  .alert-card {
+    background: linear-gradient(160deg, #111428 0%, #0e1224 100%);
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .alert-card.alert-danger { border: 1px solid #ff4d6a33; }
+  .alert-card.alert-warning { border: 1px solid #ffaa2e33; }
+  .alert-card.alert-success { border: 1px solid #2ecc8a33; }
+  .alert-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: 2px;
+  }
+  .alert-body { flex: 1; }
+  .alert-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .alert-danger .alert-title { color: #ff6060; }
+  .alert-warning .alert-title { color: #ffaa2e; }
+  .alert-success .alert-title { color: #2ecc8a; }
+  .alert-desc {
+    font-size: 0.72rem;
+    color: #8a9bbf;
+    line-height: 1.4;
+  }
+  .alert-action {
+    font-size: 0.68rem;
+    font-weight: 600;
+    margin-top: 6px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-block;
+  }
+  .alert-danger .alert-action { background: #ff4d6a18; color: #ff6060; }
+  .alert-warning .alert-action { background: #ffaa2e18; color: #ffaa2e; }
+  .alert-success .alert-action { background: #2ecc8a18; color: #2ecc8a; }
+
   /* ── Sectie titels ── */
   .sectie-titel {
     font-size: 0.68rem;
@@ -214,34 +263,6 @@
     gap: 8px;
   }
 
-  /* ── Journey grid ── */
-  .journey {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-  }
-  .fase {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .fase-header {
-    border-radius: 12px;
-    padding: 14px 18px 12px;
-    font-size: 0.7rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #fff;
-  }
-  .fase-source {
-    font-size: 0.67rem;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-    opacity: 0.6;
-    margin-top: 3px;
-    text-transform: none;
-  }
   /* ── Journey fase kleuren: achtergrond header + accent tekst gekoppeld ── */
   .h-blauw  { background: linear-gradient(135deg, #0f2d6b, #1a3d8a); border: 1px solid #2a52b0; }
   .h-groen  { background: linear-gradient(135deg, #0a3528, #0f4a38); border: 1px solid #1a6e52; }
@@ -290,7 +311,7 @@
     <span>Ads & GA4: 7 dagen | Social: 28 dagen &nbsp;|&nbsp; 14-04-2026</span>
     <a href="https://docs.google.com/spreadsheets/d/1LrGHSwQr2YGvL-cZiS1_MCWLfH8CQjDxjZwYvCn2Bu0" target="_blank"
        style="color:#5b8dee;text-decoration:none;">↗ Google Sheets</a>
-    <span class="topbar-time">13:57</span>
+    <span class="topbar-time">14:28</span>
   </div>
 </div>
 
@@ -310,18 +331,18 @@
 
     <div class="card">
       <div class="card-label">Totaal bereik</div>
-      <div class="card-value">80.337</div>
+      <div class="card-value">80.346</div>
       <div class="cmp-row"></div>
     </div>
 
     <div class="card">
       <div class="card-label">Meta Ads impressies</div>
-      <div class="card-value">57.018</div>
-      <div class="cmp-row"><span class="cmp cmp-pos">▲ 26.1%</span><span class="cmp-gem">30d gem: 45201.8</span></div>
+      <div class="card-value">57.025</div>
+      <div class="cmp-row"><span class="cmp cmp-pos">▲ 26.2%</span><span class="cmp-gem">30d gem: 45203.2</span></div>
     </div>
 
     <div class="metrics">
-      <div class="metric-row"><span class="ml">Instagram bereik</span><span class="mv">6.656</span></div>
+      <div class="metric-row"><span class="ml">Instagram bereik</span><span class="mv">6.665</span></div>
       <div class="metric-row"><span class="ml">Facebook bereik (28d)</span><span class="mv">73.681</span></div>
       <div class="metric-row"><span class="ml">Meta Ads bereik (7d)</span><span class="mv">38.555</span></div>
       <div class="metric-row"><span class="ml">Nieuwe IG volgers</span><span class="mv">+0</span></div>
@@ -343,7 +364,7 @@
 
     <div class="card">
       <div class="card-label">Totaal engagement</div>
-      <div class="card-value">620</div>
+      <div class="card-value">621</div>
       <div class="cmp-row"></div>
     </div>
 
@@ -356,7 +377,7 @@
     <div class="metrics">
       <div class="metric-row"><span class="ml">Instagram engagement</span><span class="mv">357</span></div>
       <div class="metric-row"><span class="ml">IG engagement rate</span><span class="mv">5.36%</span></div>
-      <div class="metric-row"><span class="ml">Facebook engagement</span><span class="mv">263</span></div>
+      <div class="metric-row"><span class="ml">Facebook engagement</span><span class="mv">264</span></div>
       <div class="metric-row"><span class="ml">FB engagement rate</span><span class="mv">0.36%</span></div>
       <div class="metric-row"><span class="ml">Meta Ads CTR</span><span class="mv">3.82%</span></div>
     </div>
@@ -377,22 +398,22 @@
 
     <div class="card">
       <div class="card-label">Websitesessies</div>
-      <div class="card-value">4.617</div>
-      <div class="cmp-row"><span class="cmp cmp-pos">▲ 25.4%</span><span class="cmp-gem">30d gem: 3681.8</span></div>
+      <div class="card-value">4.625</div>
+      <div class="cmp-row"><span class="cmp cmp-pos">▲ 25.6%</span><span class="cmp-gem">30d gem: 3681.8</span></div>
     </div>
 
     <div class="card">
       <div class="card-label">Gebruikers</div>
-      <div class="card-value">3.719</div>
-      <div class="cmp-row"><span class="cmp cmp-pos">▲ 36.2%</span><span class="cmp-gem">30d gem: 2729.8</span></div>
+      <div class="card-value">3.727</div>
+      <div class="cmp-row"><span class="cmp cmp-pos">▲ 36.5%</span><span class="cmp-gem">30d gem: 2731.4</span></div>
     </div>
 
     <div class="metrics">
-      <div class="metric-row"><span class="ml">Terugkerende bezoekers</span><span class="mv">459</span></div>
+      <div class="metric-row"><span class="ml">Terugkerende bezoekers</span><span class="mv">464</span></div>
       <div class="metric-row"><span class="ml">Bounce rate</span><span class="mv">64.1%</span></div>
       <div class="metric-row"><span class="ml">Engagement rate</span><span class="mv">35.9%</span></div>
-      <div class="metric-row"><span class="ml">Sessieduur</span><span class="mv">2m 4s</span></div>
-      <div class="metric-row"><span class="ml">Pageviews/sessie</span><span class="mv">—</span></div>
+      <div class="metric-row"><span class="ml">Sessieduur</span><span class="mv">2m 5s</span></div>
+      <div class="metric-row"><span class="ml">Pageviews/sessie</span><span class="mv">1.69</span></div>
     </div>
 
     <div class="card chart-card">
@@ -416,20 +437,20 @@
 
     <div class="card">
       <div class="card-label">GA4 conversies</div>
-      <div class="card-value">59</div>
-      <div class="cmp-row"><span class="cmp cmp-neg">▼ 13.4%</span><span class="cmp-gem">30d gem: 68.1</span></div>
+      <div class="card-value">60</div>
+      <div class="cmp-row"><span class="cmp cmp-neg">▼ 12.2%</span><span class="cmp-gem">30d gem: 68.4</span></div>
     </div>
 
     <div class="metrics">
-      <div class="metric-row"><span class="ml">Cost per lead</span><span class="mv">€ 59,71</span></div>
-      <div class="metric-row"><span class="ml">GA4 conv. rate</span><span class="mv">0.58%</span></div>
-      <div class="metric-row"><span class="ml">Meta Ads uitgegeven</span><span class="mv">€ 298,57</span></div>
+      <div class="metric-row"><span class="ml">Cost per lead</span><span class="mv">€ 59,72</span></div>
+      <div class="metric-row"><span class="ml">GA4 conv. rate</span><span class="mv">0.61%</span></div>
+      <div class="metric-row"><span class="ml">Meta Ads uitgegeven</span><span class="mv">€ 298,59</span></div>
     </div>
 
     <div class="card chart-card" style="justify-content:flex-start;">
       <div class="card-label">Conversie funnel</div>
       <div style="width:100%;margin-top:8px;">
-<div style="margin:4px 0;"><div style="width:100%;background:#4f9eff22;border:1px solid #4f9eff;border-radius:5px;padding:4px 10px;display:flex;justify-content:space-between;"><span style="color:#c8d4ee;font-size:0.75rem;">Bereik</span><span style="color:#4f9eff;font-size:0.75rem;font-weight:700;">80.337</span></div></div><div style="margin:4px 0;"><div style="width:97.0%;background:#ffaa2e22;border:1px solid #ffaa2e;border-radius:5px;padding:4px 10px;display:flex;justify-content:space-between;"><span style="color:#c8d4ee;font-size:0.75rem;">Impressies</span><span style="color:#ffaa2e;font-size:0.75rem;font-weight:700;">57.018</span></div></div><div style="margin:4px 0;"><div style="width:61.5%;background:#b06aff22;border:1px solid #b06aff;border-radius:5px;padding:4px 10px;display:flex;justify-content:space-between;"><span style="color:#c8d4ee;font-size:0.75rem;">Klikken</span><span style="color:#b06aff;font-size:0.75rem;font-weight:700;">1.040</span></div></div><div style="margin:4px 0;"><div style="width:14.3%;background:#2ecc8a22;border:1px solid #2ecc8a;border-radius:5px;padding:4px 10px;display:flex;justify-content:space-between;"><span style="color:#c8d4ee;font-size:0.75rem;">Leads</span><span style="color:#2ecc8a;font-size:0.75rem;font-weight:700;">5</span></div></div>
+<div style="margin:4px 0;"><div style="width:100%;background:#4f9eff22;border:1px solid #4f9eff;border-radius:5px;padding:4px 10px;display:flex;justify-content:space-between;"><span style="color:#c8d4ee;font-size:0.75rem;">Bereik</span><span style="color:#4f9eff;font-size:0.75rem;font-weight:700;">80.346</span></div></div><div style="margin:4px 0;"><div style="width:97.0%;background:#ffaa2e22;border:1px solid #ffaa2e;border-radius:5px;padding:4px 10px;display:flex;justify-content:space-between;"><span style="color:#c8d4ee;font-size:0.75rem;">Impressies</span><span style="color:#ffaa2e;font-size:0.75rem;font-weight:700;">57.025</span></div></div><div style="margin:4px 0;"><div style="width:61.5%;background:#b06aff22;border:1px solid #b06aff;border-radius:5px;padding:4px 10px;display:flex;justify-content:space-between;"><span style="color:#c8d4ee;font-size:0.75rem;">Klikken</span><span style="color:#b06aff;font-size:0.75rem;font-weight:700;">1.040</span></div></div><div style="margin:4px 0;"><div style="width:14.3%;background:#2ecc8a22;border:1px solid #2ecc8a;border-radius:5px;padding:4px 10px;display:flex;justify-content:space-between;"><span style="color:#c8d4ee;font-size:0.75rem;">Leads</span><span style="color:#2ecc8a;font-size:0.75rem;font-weight:700;">5</span></div></div>
       </div>
     </div>
   </div>
@@ -451,22 +472,22 @@
     </div>
     <div class="card">
       <div class="card-label">Sessies</div>
-      <div class="card-value">4.617</div>
-      <div class="cmp-row"><span class="cmp cmp-pos">▲ 25.4%</span><span class="cmp-gem">30d gem: 3681.8</span></div>
+      <div class="card-value">4.625</div>
+      <div class="cmp-row"><span class="cmp cmp-pos">▲ 25.6%</span><span class="cmp-gem">30d gem: 3681.8</span></div>
     </div>
     <div class="card">
       <div class="card-label">Gebruikers</div>
-      <div class="card-value">3.719</div>
-      <div class="cmp-row"><span class="cmp cmp-pos">▲ 36.2%</span><span class="cmp-gem">30d gem: 2729.8</span></div>
+      <div class="card-value">3.727</div>
+      <div class="cmp-row"><span class="cmp cmp-pos">▲ 36.5%</span><span class="cmp-gem">30d gem: 2731.4</span></div>
     </div>
     <div class="metrics">
-      <div class="metric-row"><span class="ml">Terugkerende bezoekers</span><span class="mv">459</span></div>
-      <div class="metric-row"><span class="ml">Nieuwe bezoekers</span><span class="mv">3.260</span></div>
+      <div class="metric-row"><span class="ml">Terugkerende bezoekers</span><span class="mv">464</span></div>
+      <div class="metric-row"><span class="ml">Nieuwe bezoekers</span><span class="mv">3.263</span></div>
       <div class="metric-row"><span class="ml">Bounce rate</span><span class="mv">64.1%</span></div>
       <div class="metric-row"><span class="ml">Engagement rate</span><span class="mv">35.9%</span></div>
-      <div class="metric-row"><span class="ml">Gem. sessieduur</span><span class="mv">2m 4s</span></div>
-      <div class="metric-row"><span class="ml">Conversies</span><span class="mv">59</span></div>
-      <div class="metric-row"><span class="ml">Conv. rate</span><span class="mv">0.58%</span></div>
+      <div class="metric-row"><span class="ml">Gem. sessieduur</span><span class="mv">2m 5s</span></div>
+      <div class="metric-row"><span class="ml">Conversies</span><span class="mv">60</span></div>
+      <div class="metric-row"><span class="ml">Conv. rate</span><span class="mv">0.61%</span></div>
     </div>
   </div>
 
@@ -478,7 +499,7 @@
     </div>
     <div class="card">
       <div class="card-label">Totaal uitgegeven</div>
-      <div class="card-value">€ 298,57</div>
+      <div class="card-value">€ 298,59</div>
       <div class="cmp-row"><span class="cmp cmp-pos">▲ 4.4%</span><span class="cmp-gem">30d gem: € 285,90</span></div>
     </div>
 
@@ -496,7 +517,7 @@
         <div style="padding:10px 14px;display:flex;flex-direction:column;gap:6px;">
           <div style="display:flex;justify-content:space-between;align-items:center;">
             <span style="font-size:0.67rem;color:#8a9bbf;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">Uitgegeven</span>
-            <span style="font-size:0.82rem;font-weight:700;color:#dde3f0;">€ 178,94 <span style="font-size:0.58rem;color:#ff4d6a;font-weight:700;" title="30d gem: 176.92 (+1.1%)">▲</span></span>
+            <span style="font-size:0.82rem;font-weight:700;color:#dde3f0;">€ 178,96 <span style="font-size:0.58rem;color:#ff4d6a;font-weight:700;" title="30d gem: 176.93 (+1.1%)">▲</span></span>
           </div>
           <div style="height:1px;background:#1c2040;"></div>
           <div style="display:flex;justify-content:space-between;align-items:center;">
@@ -521,12 +542,12 @@
           <div style="height:1px;background:#1c2040;"></div>
           <div style="display:flex;justify-content:space-between;align-items:center;">
             <span style="font-size:0.67rem;color:#8a9bbf;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">Impressies</span>
-            <span style="font-size:0.82rem;font-weight:700;color:#dde3f0;">16.229 <span style="font-size:0.58rem;color:#2ecc8a;font-weight:700;" title="30d gem: 14536.20 (+11.6%)">▲</span></span>
+            <span style="font-size:0.82rem;font-weight:700;color:#dde3f0;">16.234 <span style="font-size:0.58rem;color:#2ecc8a;font-weight:700;" title="30d gem: 14537.37 (+11.7%)">▲</span></span>
           </div>
           <div style="height:1px;background:#1c2040;"></div>
           <div style="display:flex;justify-content:space-between;align-items:center;">
             <span style="font-size:0.67rem;color:#8a9bbf;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">CPM</span>
-            <span style="font-size:0.82rem;font-weight:700;color:#dde3f0;">€ 11,03 <span style="font-size:0.58rem;color:#2ecc8a;font-weight:700;" title="30d gem: 12.17 (-9.4%)">▼</span></span>
+            <span style="font-size:0.82rem;font-weight:700;color:#dde3f0;">€ 11,02 <span style="font-size:0.58rem;color:#2ecc8a;font-weight:700;" title="30d gem: 12.17 (-9.4%)">▼</span></span>
           </div>
           <div style="height:1px;background:#1c2040;"></div>
           <div style="display:flex;justify-content:space-between;align-items:center;">
@@ -573,7 +594,7 @@
           <div style="height:1px;background:#1c2040;"></div>
           <div style="display:flex;justify-content:space-between;align-items:center;">
             <span style="font-size:0.67rem;color:#8a9bbf;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">Impressies</span>
-            <span style="font-size:0.82rem;font-weight:700;color:#dde3f0;">40.789 <span style="font-size:0.58rem;color:#2ecc8a;font-weight:700;" title="30d gem: 30665.60 (+33.0%)">▲</span></span>
+            <span style="font-size:0.82rem;font-weight:700;color:#dde3f0;">40.791 <span style="font-size:0.58rem;color:#2ecc8a;font-weight:700;" title="30d gem: 30665.83 (+33.0%)">▲</span></span>
           </div>
           <div style="height:1px;background:#1c2040;"></div>
           <div style="display:flex;justify-content:space-between;align-items:center;">
@@ -604,8 +625,8 @@
     </div>
     <div class="card">
       <div class="card-label">Bereik</div>
-      <div class="card-value">6.656</div>
-      <div class="cmp-row"><span class="cmp cmp-neg">▼ 69.6%</span><span class="cmp-gem">30d gem: 21.891</span></div>
+      <div class="card-value">6.665</div>
+      <div class="cmp-row"><span class="cmp cmp-neg">▼ 69.6%</span><span class="cmp-gem">30d gem: 21.951</span></div>
     </div>
     <div class="metrics">
       <div class="metric-row"><span class="ml">Engagement</span><span class="mv">357</span></div>
@@ -635,13 +656,13 @@
       <div class="cmp-row"></div>
     </div>
     <div class="metrics">
-      <div class="metric-row"><span class="ml">Engagement</span><span class="mv">263</span></div>
+      <div class="metric-row"><span class="ml">Engagement</span><span class="mv">264</span></div>
       <div class="metric-row"><span class="ml">Engagement rate</span><span class="mv">0.36%</span></div>
-      <div class="metric-row"><span class="ml">Likes</span><span class="mv">210</span></div>
+      <div class="metric-row"><span class="ml">Likes</span><span class="mv">211</span></div>
       <div class="metric-row"><span class="ml">Comments</span><span class="mv">9</span></div>
       <div class="metric-row"><span class="ml">Shares</span><span class="mv">44</span></div>
       <div class="metric-row"><span class="ml">Posts geanalyseerd</span><span class="mv">17</span></div>
-      <div class="metric-row"><span class="ml">Video views</span><span class="mv">186.888</span></div>
+      <div class="metric-row"><span class="ml">Video views</span><span class="mv">187.219</span></div>
     </div>
   </div>
 
@@ -662,7 +683,7 @@
         
         <div class="fn-bar" style="width:100%;background:#4f9eff22;border:2px solid #4f9eff;border-radius:8px;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;">
           <span class="fn-label" style="color:#c8d4ee;font-weight:600;">Bereik</span>
-          <span class="fn-num" style="color:#4f9eff;font-size:1.15rem;font-weight:700;">80.337</span>
+          <span class="fn-num" style="color:#4f9eff;font-size:1.15rem;font-weight:700;">80.346</span>
           <span class="fn-pct" style="color:#5a6480;font-size:0.8rem;">100.00%</span>
         </div>
       </div>
@@ -671,7 +692,7 @@
         <span class="fn-drop">-29.0%</span>
         <div class="fn-bar" style="width:97.0%;background:#ffaa2e22;border:2px solid #ffaa2e;border-radius:8px;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;">
           <span class="fn-label" style="color:#c8d4ee;font-weight:600;">Impressies</span>
-          <span class="fn-num" style="color:#ffaa2e;font-size:1.15rem;font-weight:700;">57.018</span>
+          <span class="fn-num" style="color:#ffaa2e;font-size:1.15rem;font-weight:700;">57.025</span>
           <span class="fn-pct" style="color:#5a6480;font-size:0.8rem;">70.97%</span>
         </div>
       </div>
@@ -696,8 +717,8 @@
     </div>
     <div style="margin-top:16px;padding-top:14px;border-top:1px solid #1c2040;">
       <span style="color:#5a6480;font-size:0.8rem;">CPL &nbsp;</span>
-      <span style="color:#2ecc8a;font-size:1.2rem;font-weight:700;">€ 59,71</span>
-      <span style="color:#5a6480;font-size:0.75rem;margin-left:10px;">5 leads / € 298,57</span>
+      <span style="color:#2ecc8a;font-size:1.2rem;font-weight:700;">€ 59,72</span>
+      <span style="color:#5a6480;font-size:0.75rem;margin-left:10px;">5 leads / € 298,59</span>
     </div>
   </div>
 
@@ -710,7 +731,7 @@
         
         <div class="fn-bar" style="width:100%;background:#4f9eff22;border:2px solid #4f9eff;border-radius:8px;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;">
           <span class="fn-label" style="color:#c8d4ee;font-weight:600;">Sessies</span>
-          <span class="fn-num" style="color:#4f9eff;font-size:1.15rem;font-weight:700;">4.617</span>
+          <span class="fn-num" style="color:#4f9eff;font-size:1.15rem;font-weight:700;">4.625</span>
           <span class="fn-pct" style="color:#5a6480;font-size:0.8rem;">100.0%</span>
         </div>
       </div>
@@ -719,40 +740,83 @@
         <span class="fn-drop">-19.4%</span>
         <div class="fn-bar" style="width:97.4%;background:#ffaa2e22;border:2px solid #ffaa2e;border-radius:8px;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;">
           <span class="fn-label" style="color:#c8d4ee;font-weight:600;">Gebruikers</span>
-          <span class="fn-num" style="color:#ffaa2e;font-size:1.15rem;font-weight:700;">3.719</span>
+          <span class="fn-num" style="color:#ffaa2e;font-size:1.15rem;font-weight:700;">3.727</span>
           <span class="fn-pct" style="color:#5a6480;font-size:0.8rem;">80.6%</span>
         </div>
       </div>
 
       <div class="fn-row">
-        <span class="fn-drop">-55.4%</span>
+        <span class="fn-drop">-55.5%</span>
         <div class="fn-bar" style="width:87.9%;background:#b06aff22;border:2px solid #b06aff;border-radius:8px;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;">
           <span class="fn-label" style="color:#c8d4ee;font-weight:600;">Engaged sessies</span>
-          <span class="fn-num" style="color:#b06aff;font-size:1.15rem;font-weight:700;">1.658</span>
+          <span class="fn-num" style="color:#b06aff;font-size:1.15rem;font-weight:700;">1.660</span>
           <span class="fn-pct" style="color:#5a6480;font-size:0.8rem;">35.9%</span>
         </div>
       </div>
 
       <div class="fn-row">
         <span class="fn-drop">-96.4%</span>
-        <div class="fn-bar" style="width:48.3%;background:#2ecc8a22;border:2px solid #2ecc8a;border-radius:8px;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;">
+        <div class="fn-bar" style="width:48.5%;background:#2ecc8a22;border:2px solid #2ecc8a;border-radius:8px;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;">
           <span class="fn-label" style="color:#c8d4ee;font-weight:600;">Conversies</span>
-          <span class="fn-num" style="color:#2ecc8a;font-size:1.15rem;font-weight:700;">59</span>
+          <span class="fn-num" style="color:#2ecc8a;font-size:1.15rem;font-weight:700;">60</span>
           <span class="fn-pct" style="color:#5a6480;font-size:0.8rem;">1.3%</span>
         </div>
       </div>
     </div>
     <div style="margin-top:16px;padding-top:14px;border-top:1px solid #1c2040;">
       <span style="color:#5a6480;font-size:0.8rem;">Conv. rate &nbsp;</span>
-      <span style="color:#2ecc8a;font-size:1.2rem;font-weight:700;">0.58%</span>
-      <span style="color:#5a6480;font-size:0.75rem;margin-left:10px;">59 conversies / 4.617 sessies</span>
+      <span style="color:#2ecc8a;font-size:1.2rem;font-weight:700;">0.61%</span>
+      <span style="color:#5a6480;font-size:0.75rem;margin-left:10px;">60 conversies / 4.625 sessies</span>
     </div>
   </div>
 
 </div>
 
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SECTIE 4: ALERTS & ACTIES                          -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="sectie-titel">Alerts & aanbevelingen</div>
+<div class="alerts-grid">
+
+      <div class="alert-card alert-success">
+        <div class="alert-icon">✅</div>
+        <div class="alert-body">
+          <div class="alert-title">Sterke CTR</div>
+          <div class="alert-desc">CTR is 3.82% — boven benchmark.</div>
+          <div class="alert-action">Goed presterende ads, overweeg budget te verhogen</div>
+        </div>
+      </div>
+
+      <div class="alert-card alert-danger">
+        <div class="alert-icon">🚨</div>
+        <div class="alert-body">
+          <div class="alert-title">CPL stijgt sterk</div>
+          <div class="alert-desc">CPL is € 59,72 vs 30d gem. € 26,07 (+129%).</div>
+          <div class="alert-action">Optimaliseer targeting, biedstrategie of landingspagina</div>
+        </div>
+      </div>
+
+      <div class="alert-card alert-warning">
+        <div class="alert-icon">⚠️</div>
+        <div class="alert-body">
+          <div class="alert-title">Hoge bounce rate</div>
+          <div class="alert-desc">Bounce rate is 64.1% — bezoekers verlaten de site snel.</div>
+          <div class="alert-action">Verbeter landingspagina's: laadtijd, relevantie, CTA</div>
+        </div>
+      </div>
+
+      <div class="alert-card alert-success">
+        <div class="alert-icon">✅</div>
+        <div class="alert-body">
+          <div class="alert-title">Sterke IG engagement</div>
+          <div class="alert-desc">Instagram engagement rate is 5.4% — uitstekend.</div>
+          <div class="alert-action">Content strategie werkt goed</div>
+        </div>
+      </div>
+</div>
+
 <div class="footer">
-  Automatisch gegenereerd op 14-04-2026 om 13:57 &nbsp;&mdash;&nbsp;
+  Automatisch gegenereerd op 14-04-2026 om 14:28 &nbsp;&mdash;&nbsp;
   <a href="https://docs.google.com/spreadsheets/d/1LrGHSwQr2YGvL-cZiS1_MCWLfH8CQjDxjZwYvCn2Bu0" target="_blank">Bekijk volledig rapport in Google Sheets</a>
 </div>
 
@@ -769,7 +833,7 @@ new Chart(document.getElementById('chartBereik'), {
   type: 'doughnut',
   data: {
     labels: ['Instagram (28d)', 'Facebook (28d)'],
-    datasets: [{ data: [6656, 73681],
+    datasets: [{ data: [6665, 73681],
       backgroundColor: ['#4f9eff','#2ecc8a'],
       borderWidth: 2, borderColor: '#080b18', hoverOffset: 8 }]
   },
@@ -785,7 +849,7 @@ new Chart(document.getElementById('chartEngagement'), {
   type: 'doughnut',
   data: {
     labels: ['Instagram', 'Facebook'],
-    datasets: [{ data: [357, 263],
+    datasets: [{ data: [357, 264],
       backgroundColor: ['#4f9eff','#2ecc8a'],
       borderWidth: 2, borderColor: '#080b18', hoverOffset: 8 }]
   },
@@ -801,7 +865,7 @@ new Chart(document.getElementById('chartWebsite'), {
   type: 'bar',
   data: {
     labels: ['Sessies', 'Gebruikers', 'Conversies'],
-    datasets: [{ data: [4617, 3719, 59],
+    datasets: [{ data: [4625, 3727, 60],
       backgroundColor: ['rgba(255,170,46,0.25)','rgba(79,158,255,0.25)','rgba(46,204,138,0.25)'],
       borderColor:     ['#ffaa2e','#4f9eff','#2ecc8a'],
       borderWidth: 2, borderRadius: 6 }]
